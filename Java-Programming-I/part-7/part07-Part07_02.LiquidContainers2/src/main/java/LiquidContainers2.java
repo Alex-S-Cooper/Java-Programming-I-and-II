@@ -7,10 +7,10 @@ public class LiquidContainers2 {
         Scanner scan = new Scanner(System.in);
         Container firstContainer = new Container();
         Container secondContainer = new Container();
-
+        
         while (true) {
-            firstContainer.toString();
-            secondContainer.toString();
+            System.out.println("First: " + firstContainer.toString());
+            System.out.println("Second: " + secondContainer.toString());
             
             String input = scan.nextLine();
             if (input.equals("quit")) {
@@ -30,8 +30,13 @@ public class LiquidContainers2 {
             }
             
             if (command.equals("move")) {
-                firstContainer.remove(amount);
-                secondContainer.add(amount);
+                if (firstContainer.contains() >= amount) {
+                    firstContainer.remove(amount);
+                    secondContainer.add(amount);
+                } else {
+                    secondContainer.add(firstContainer.contains());
+                    firstContainer.remove(firstContainer.contains());
+                }
             }
             
             if (command.equals("remove")) {
